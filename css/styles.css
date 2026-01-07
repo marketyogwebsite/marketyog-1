@@ -129,3 +129,37 @@ body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-heig
 .hidden{display:none}
 .fade-in{animation:fadeIn .45s ease both}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Small screen tweaks: improve readability and touch targets */
+@media (max-width:600px){
+  .container{padding:1rem}
+  .header-inner{align-items:center;gap:0.5rem;flex-wrap:wrap}
+  .logo img{height:36px}
+  .nav-toggle{display:block}
+  .actions{display:flex;gap:0.4rem;align-items:center}
+  .actions .btn.primary{padding:0.55rem 0.8rem;font-size:0.9rem}
+  .main-nav{inset:64px 12px auto 12px;padding:0.8rem}
+  .main-nav ul{gap:0.6rem}
+  .main-nav a{display:block;padding:0.6rem 0.8rem;border-radius:8px}
+  .hero{padding:3.25rem 0 2rem}
+  .hero-copy h1{font-size:1.6rem}
+  .hero-copy p{font-size:0.95rem;max-width:40ch}
+  .hero-art img{max-width:320px}
+  .how-works h2,.jobs-header h2,.partners h2,.contact h2{font-size:1.05rem}
+  .steps{flex-direction:column}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-cta .cta-box{padding:0.9rem}
+  .floating-contact{right:12px;bottom:14px;padding:10px 12px}
+  .apply-grid, .apply-page-grid{grid-template-columns:1fr}
+  .apply-form .two-up{grid-template-columns:1fr}
+  .job-cards{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+}
+
+/* Extra-small screens: increase touch targets and reduce distractions */
+@media (max-width:420px){
+  .main-nav{left:10px;right:10px}
+  .actions{gap:0.25rem}
+  .btn{padding:0.55rem 0.6rem}
+  .hero-copy p{max-width:30ch}
+  .site-footer .container{flex-direction:column;align-items:flex-start;gap:0.6rem}
+}
