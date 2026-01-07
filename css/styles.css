@@ -3,11 +3,13 @@
 :root{
   --bg:#f4f7fb;--panel:#ffffff;--text:#07203b;--muted:#60708a;--accent:#0b5fff;--gold:#d4ab4b;--glass:rgba(255,255,255,0.6)
 }
-html,body{height:100%}
+html,body{height:100%;overflow-x:hidden}
 body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.6;background:linear-gradient(180deg,#f7fbff 0%, #f4f7fb 100%);color:var(--text);-webkit-font-smoothing:antialiased}
 .container{max-width:1180px;margin:0 auto;padding:2rem}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .logo img{height:44px;filter:drop-shadow(0 6px 18px rgba(11,95,255,0.12))}
+/* Ensure images and svg artwork never overflow their containers */
+img,svg{max-width:100%;height:auto;display:block}
 .nav-toggle{display:none;background:transparent;border:0;padding:0.35rem;border-radius:8px}
 .nav-toggle svg{display:block}
 .main-nav ul{list-style:none;display:flex;gap:1.25rem;align-items:center}
@@ -40,8 +42,8 @@ body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-heig
 .job-card h3{margin-bottom:0.35rem}
 .job-meta{color:var(--muted);font-size:0.95rem;margin-bottom:0.6rem}
 .job-actions{display:flex;gap:0.5rem}
-.partners .logos{display:flex;gap:1rem;align-items:center}
-.partners img{height:44px;opacity:0.95;border-radius:8px;background:#fff;padding:6px;box-shadow:0 8px 20px rgba(11,34,80,0.04)}
+.partners .logos{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.partners img{height:44px;opacity:0.95;border-radius:8px;background:#fff;padding:6px;box-shadow:0 8px 20px rgba(11,34,80,0.04);max-width:120px}
 .contact{padding:3rem 0}
 .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:1.25rem;align-items:start}
 .contact-cards{display:flex;flex-direction:column;gap:0.8rem}
@@ -62,6 +64,8 @@ body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-heig
 .modal{position:fixed;inset:0;background:linear-gradient(rgba(3,10,25,0.45), rgba(3,10,25,0.45));display:none;align-items:center;justify-content:center;padding:1rem}
 .modal[aria-hidden="false"]{display:flex}
 .modal-content{background:linear-gradient(180deg,#fff,#fbfdff);padding:1.5rem;border-radius:12px;width:100%;max-width:580px;position:relative;box-shadow:0 30px 80px rgba(3,10,25,0.2)}
+/* Ensure modal never causes horizontal scroll on very small viewports */
+.modal-content{width:calc(100% - 2rem);max-width:580px}
 .modal-close{position:absolute;right:0.6rem;top:0.4rem;border:none;background:none;font-size:1.4rem}
 .success{padding:1rem;background:linear-gradient(90deg,#ecfdf5,#ebf8ff);border-radius:8px;margin-top:1rem}
 /* Apply modal form styles */
@@ -138,7 +142,7 @@ body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-heig
   .nav-toggle{display:block}
   .actions{display:flex;gap:0.4rem;align-items:center}
   .actions .btn.primary{padding:0.55rem 0.8rem;font-size:0.9rem}
-  .main-nav{inset:64px 12px auto 12px;padding:0.8rem}
+  .main-nav{inset:64px 12px auto 12px;padding:0.8rem;box-sizing:border-box}
   .main-nav ul{gap:0.6rem}
   .main-nav a{display:block;padding:0.6rem 0.8rem;border-radius:8px}
   .hero{padding:3.25rem 0 2rem}
