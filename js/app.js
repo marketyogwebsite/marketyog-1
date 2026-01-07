@@ -174,25 +174,29 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-function renderJobs(list) {
+// Only show new cards, not old jobs
+function renderJobs() {
   const el = document.getElementById('jobsList')
-  el.innerHTML = ''
-  list.forEach(j => {
-    const card = document.createElement('article')
-    card.className = 'job-card'
-    card.innerHTML = `
-      <h3>${escapeHtml(j.title)}</h3>
-      <div class="job-meta">${j.role} • ${j.city} • ${j.exp}</div>
-      <p>Salary: ${j.salary}</p>
+  el.innerHTML = `
+    <article class="job-card">
+      <h3>Apply as a Sales Agent</h3>
+      <div class="job-meta">Sales • Multiple Cities / Remote</div>
+      <p><strong>Salary:</strong> Depends on your interview</p>
+      <p style="color:var(--muted);font-size:0.98rem;margin-bottom:0.7rem">As a Sales Agent, you will connect with potential customers, explain product benefits, and help close deals. You’ll need strong communication skills, a positive attitude, and the ability to handle objections. Your day will include making calls, following up on leads, and meeting sales targets. Training and support provided for freshers.</p>
       <div class="job-actions">
-        <button class="btn apply" data-job="${j.id}">Apply</button>
-        <button class="btn ghost" onclick="viewDetails('${j.id}')">Details</button>
+        <a href="apply.html" class="btn primary">Apply Now</a>
       </div>
-    `
-    el.appendChild(card)
-    // small entrance animation
-    requestAnimationFrame(() => card.classList.add('fade-in'))
-  })
+    </article>
+    <article class="job-card">
+      <h3>Apply as a Customer Care Agent</h3>
+      <div class="job-meta">Customer Care • Multiple Cities / Remote</div>
+      <p><strong>Salary:</strong> Depends on your interview</p>
+      <p style="color:var(--muted);font-size:0.98rem;margin-bottom:0.7rem">As a Customer Care Agent, you’ll help customers resolve queries, provide information, and ensure a smooth experience. You’ll need patience, empathy, and clear communication. Your role involves answering calls, responding to messages, and solving problems quickly. Training and guidance provided for new joiners.</p>
+      <div class="job-actions">
+        <a href="apply.html" class="btn primary">Apply Now</a>
+      </div>
+    </article>
+  `
 }
 
 function applyFilters() {
