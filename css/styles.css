@@ -89,6 +89,9 @@ img,svg{max-width:100%;height:auto;display:block}
   }
   .footer-enhanced{padding:1.25rem 0}
   .footer-brand .muted{max-width:100%}
+  .footer-brand{order:1;text-align:center;width:100%}
+  .footer-links{order:2;width:100%}
+  .footer-contact{order:3;width:100%}
   .newsletter-form{flex-direction:column;align-items:stretch}
   .newsletter-form input{width:100%}
   .socials{justify-content:center}
