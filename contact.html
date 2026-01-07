@@ -17,16 +17,87 @@
   </header>
 
   <main class="container">
-    <section style="padding:3rem 0">
-      <h1>Contact Us</h1>
-      <p class="muted">Reach us at <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a> or call <a href="tel:+919588819276">95888 19276</a>.</p>
-      <p>If you'd like us to shortlist candidates for your openings, share requirements and we'll coordinate interviews.</p>
+    <section style="padding:2.5rem 0">
+      <header style="margin-bottom:1rem">
+        <h1>Contact MarketYog</h1>
+        <p class="muted">We’re here to help you hire faster and better. Reach out and our team will respond promptly.</p>
+      </header>
+
+      <article style="background:linear-gradient(180deg,#fff,#fbfdff);padding:1.25rem;border-radius:12px;box-shadow:0 20px 60px rgba(3,10,25,0.04)">
+        <h2>How to reach us</h2>
+        <p class="muted">Whether you’re a candidate looking for the next role, a hiring manager needing a fast shortlist, or a training partner who wants to collaborate — we make it simple to connect. Use any of the channels below and include a short note about what you need so we can route your request to the right person.</p>
+
+        <h3 style="margin-top:0.8rem">Phone</h3>
+        <p class="muted">Quick help and urgent hiring requests: <a href="tel:+919588819276">95888 19276</a> (Mon–Sat, 10:00–19:00 IST). For priority corporate partnerships, ask for our business team and we’ll set up a discovery call within 24 hours.</p>
+
+        <h3 style="margin-top:0.8rem">Email</h3>
+        <p class="muted">For role submissions, candidate follow-ups, or partnership enquiries: <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a>. Use subject lines like "Hiring: Sales Executives — Mumbai" or "Candidate Application — [Your Name]" so we can prioritise correctly.</p>
+
+        <h3 style="margin-top:0.8rem">Walk-in & Regional Offices</h3>
+        <p class="muted">We work across multiple cities and coordinate interviews remotely as required. If you prefer an in-person meeting, mention your city in the email and we’ll propose the nearest regional partner or co-working address.</p>
+
+        <h2 style="margin-top:1rem">Tell us about your hiring need (sample brief)</h2>
+        <p class="muted">To get a quick response, include the following in your message:</p>
+        <ul style="margin-top:0.5rem;color:var(--muted)">
+          <li><strong>Role title & level:</strong> e.g., Sales Executive (Field) / Customer Care — 0–2 years</li>
+          <li><strong>Location & shift:</strong> City, remote, or hybrid; day/evening shifts if relevant</li>
+          <li><strong>Target metrics:</strong> Calls per day, conversion expectation, SLA for responses</li>
+          <li><strong>Interview process:</strong> Number of rounds, on-site or virtual, assessment tasks</li>
+          <li><strong>Start date & hiring timeline:</strong> Immediate, within 2 weeks, or next month</li>
+        </ul>
+
+        <h2 style="margin-top:1rem">For candidates — apply with confidence</h2>
+        <p class="muted">If you are applying for a role, please share an updated resume, two lines about your recent achievement, and the preferred job IDs (if listed on the site). We provide short, helpful feedback to applicants and guide them through interview readiness where possible.</p>
+
+        <h2 style="margin-top:1rem">Support & Feedback</h2>
+        <p class="muted">We value feedback — whether it is about a candidate experience, a hiring success, or a website improvement. Send your thoughts to <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a> with the subject "Feedback" and our team will acknowledge receipt within 48 hours.</p>
+
+        <div style="margin-top:1rem;display:flex;gap:0.6rem;flex-wrap:wrap">
+          <a href="apply.html" class="btn primary">Apply Now</a>
+          <a href="about.html" class="btn ghost">Learn About Us</a>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> MarketYog — All rights reserved.</p>
+  <footer class="site-footer footer-enhanced">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="MarketYog">
+          <img src="assets/logo.svg" alt="MarketYog logo" />
+        </a>
+        <p class="muted">We screen, interview, and send trained Sales &amp; Customer Care agents to partner companies.</p>
+        <p class="copyright">© <span id="year"></span> MarketYog — All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p class="muted">Call: <a href="tel:+919588819276">95888 19276</a></p>
+        <p class="muted">Email: <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a></p>
+        <div class="socials" aria-hidden="false">
+          <a href="#" class="social">Twitter</a>
+          <a href="#" class="social">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Subscribe</h4>
+        <p class="muted small">Updates on new openings &amp; hiring tips.</p>
+        <form id="newsletterForm" class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!')">
+          <input type="email" placeholder="Your email" required />
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
+      </div>
     </div>
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>

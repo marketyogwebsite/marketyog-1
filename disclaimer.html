@@ -17,15 +17,75 @@
   </header>
 
   <main class="container">
-    <section style="padding:3rem 0">
-      <h1>Disclaimer</h1>
-      <p class="muted">Information on this site is provided for general informational purposes only. We do not guarantee placement outcomes.</p>
+    <section style="padding:2.5rem 0">
+      <header style="margin-bottom:1rem">
+        <h1>Disclaimer & Important Notice</h1>
+        <p class="muted">Please read the following terms carefully. MarketYog aims to provide accurate information and practical hiring support, but certain limitations apply.</p>
+      </header>
+
+      <article style="background:linear-gradient(180deg,#fff,#fbfdff);padding:1.25rem;border-radius:12px;box-shadow:0 20px 60px rgba(3,10,25,0.04)">
+        <h2>General information</h2>
+        <p class="muted">The content on this website is provided for general informational purposes only and should not be construed as legal, professional or employment advice. While we make reasonable efforts to ensure the accuracy of information about job listings, candidate profiles and partner companies, we do not guarantee that the content is complete, current or error-free.</p>
+
+        <h2 style="margin-top:1rem">Placement outcomes</h2>
+        <p class="muted">We screen and shortlist candidates, and assist with interview coordination. However, final hiring decisions, offers, and employment terms are at the discretion of the hiring company. MarketYog does not guarantee any particular placement or employment outcome, nor can we assume liability for decisions made by our partners.</p>
+
+        <h2 style="margin-top:1rem">Candidate data & privacy</h2>
+        <p class="muted">By applying or sharing personal information through MarketYog, you consent to the collection, storage and processing of that information for recruitment purposes. We retain candidate data to assist with job matching and to respond to employer requests. Resumes and contact details are shared with prospective employers with the applicant's consent. We recommend removing sensitive personal data from documents you upload and only sharing what’s necessary for recruitment.</p>
+
+        <h2 style="margin-top:1rem">Third-party links and partner content</h2>
+        <p class="muted">Our website may contain links to external partner websites or job postings. These links are provided for convenience; MarketYog does not endorse, control, or accept responsibility for the content, policies or practices of third-party sites. We encourage users to review the privacy and terms pages of third-party services before sharing information.</p>
+
+        <h2 style="margin-top:1rem">Limitation of liability</h2>
+        <p class="muted">To the fullest extent permitted by law, MarketYog and its affiliates are not liable for any direct, indirect, consequential or incidental damages arising from the use of this site, reliance on its content, or any recruitment outcome. This includes but is not limited to lost opportunities, employment disputes, or financial losses associated with recruitment activities.</p>
+
+        <h2 style="margin-top:1rem">How to contact us about concerns</h2>
+        <p class="muted">If you believe there is an error in our content, or have concerns about data handling or a recruitment interaction, please contact us at <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a>. We will review and respond to legitimate concerns within a reasonable timeframe.</p>
+
+        <h2 style="margin-top:1rem">Updates to this disclaimer</h2>
+        <p class="muted">We may update this disclaimer from time to time. Continued use of the site after changes implies acceptance of the updated terms.</p>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> MarketYog — All rights reserved.</p>
+  <footer class="site-footer footer-enhanced">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="MarketYog">
+          <img src="assets/logo.svg" alt="MarketYog logo" />
+        </a>
+        <p class="muted">We screen, interview, and send trained Sales &amp; Customer Care agents to partner companies.</p>
+        <p class="copyright">© <span id="year"></span> MarketYog — All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p class="muted">Call: <a href="tel:+919588819276">95888 19276</a></p>
+        <p class="muted">Email: <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a></p>
+        <div class="socials" aria-hidden="false">
+          <a href="#" class="social">Twitter</a>
+          <a href="#" class="social">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Subscribe</h4>
+        <p class="muted small">Updates on new openings &amp; hiring tips.</p>
+        <form id="newsletterForm" class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!')">
+          <input type="email" placeholder="Your email" required />
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
+      </div>
     </div>
   </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
