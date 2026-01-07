@@ -89,6 +89,22 @@ img,svg{max-width:100%;height:auto;display:block}
   .newsletter-form{flex-direction:column;align-items:stretch}
   .newsletter-form input{width:100%}
   .socials{justify-content:center}
+
+  /* Mobile footer re-order and styling */
+  .footer-brand{order:1;text-align:center}
+  .footer-links{order:2}
+  .footer-contact{order:3}
+  .footer-newsletter{order:4}
+
+  .footer-grid > *{padding:0.6rem 0}
+  .footer-grid > * + *{border-top:1px solid rgba(11,19,33,0.04);padding-top:0.9rem}
+
+  .footer-links h4, .footer-contact h4, .footer-newsletter h4{font-size:1.02rem;text-align:center}
+  .footer-links ul{align-items:center}
+  .footer-links a{display:inline-block;padding:6px 0}
+  .footer-brand .muted{margin:0 auto 0.6rem;max-width:44ch}
+  .socials{justify-content:center;gap:0.5rem}
+  .social{padding:8px 12px}
 }
 
 /* floating contact */
