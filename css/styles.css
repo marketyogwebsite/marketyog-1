@@ -33,7 +33,17 @@ img,svg{max-width:100%;height:auto;display:block}
 .steps{display:flex;gap:1rem;list-style:none}
 .steps li{background:var(--panel);padding:1.2rem;border-radius:12px;flex:1;box-shadow:0 10px 30px rgba(11,34,80,0.05);border-left:4px solid var(--gold)}
 .jobs{padding:3rem 0}
-.jobs-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.jobs-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:1rem;
+  background:linear-gradient(90deg,#f7fafc 60%,#eaf2ff 100%);
+  border-radius:18px;
+  box-shadow:0 4px 24px rgba(11,34,80,0.07);
+  padding:1.2rem 1.2rem 1rem 1.2rem;
+  border:1px solid #eaf2ff;
+}
 .filters{display:flex;gap:0.75rem;align-items:center}
 .filters select,.filters input{padding:0.6rem;border-radius:10px;border:1px solid rgba(11,19,33,0.06);background:#fff}
 .job-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
@@ -291,7 +301,21 @@ img,svg{max-width:100%;height:auto;display:block}
   .hero-copy h1{font-size:1.6rem}
   .hero-copy p{font-size:0.95rem;max-width:40ch}
   .hero-art img{max-width:320px}
-  .how-works h2,.jobs-header h2,.partners h2,.contact h2{font-size:1.05rem}
+  .how-works h2,.partners h2,.contact h2{font-size:1.05rem}
+  .jobs-header h2{
+    margin:0;
+    font-size:1.55rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    color:#0b254f;
+    background:linear-gradient(90deg,#0b5fff 30%,#0a9aff 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    text-fill-color:transparent;
+    display:inline-block;
+    padding-left:0.1em;
+  }
   .steps{flex-direction:column}
   .contact-grid{grid-template-columns:1fr}
   .contact-cta .cta-box{padding:0.9rem}
