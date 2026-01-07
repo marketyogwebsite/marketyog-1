@@ -154,12 +154,43 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> MarketYog — All rights reserved.</p>
-      <div class="admin-actions" style="margin-top:0.75rem;display:flex;gap:0.5rem;align-items:center">
-        <button id="exportApps" class="btn small">Export Applications</button>
-        <button id="clearApps" class="btn small">Clear Applications</button>
+  <footer class="site-footer footer-enhanced">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="MarketYog">
+          <img src="assets/logo.svg" alt="MarketYog logo" />
+        </a>
+        <p class="muted">We screen, interview, and send trained Sales &amp; Customer Care agents to partner companies.</p>
+        <p class="copyright">© <span id="year"></span> MarketYog — All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <p class="muted">Call: <a href="tel:+919588819276">95888 19276</a></p>
+        <p class="muted">Email: <a href="mailto:officiallyteam@marketyog.com">officiallyteam@marketyog.com</a></p>
+        <div class="socials" aria-hidden="false">
+          <a href="#" class="social">Twitter</a>
+          <a href="#" class="social">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Subscribe</h4>
+        <p class="muted small">Updates on new openings &amp; hiring tips.</p>
+        <form id="newsletterForm" class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!')">
+          <input type="email" placeholder="Your email" required />
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
       </div>
     </div>
   </footer>
