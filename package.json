@@ -1,0 +1,13 @@
+{
+  "name": "marketyog",
+  "version": "1.0.0",
+  "description": "MarketYog static frontend — run a small node server with configurable PORT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "PORT=8000 node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

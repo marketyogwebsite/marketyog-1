@@ -1,0 +1,14 @@
+<svg width="560" height="360" viewBox="0 0 560 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recruitment illustration">
+  <rect width="560" height="360" rx="20" fill="#eef6ff"/>
+  <g transform="translate(40,40)" opacity="0.98">
+    <rect x="220" y="10" width="280" height="240" rx="12" fill="#fff" stroke="#e6f0ff"/>
+    <circle cx="80" cy="80" r="36" fill="#0b5fff"/>
+    <rect x="20" y="140" width="140" height="16" rx="6" fill="#dbeeff"/>
+    <rect x="20" y="166" width="110" height="12" rx="6" fill="#f0f6ff"/>
+    <rect x="260" y="32" width="200" height="18" rx="6" fill="#eef6ff"/>
+    <rect x="260" y="60" width="160" height="12" rx="6" fill="#f7fbff"/>
+    <rect x="260" y="84" width="220" height="12" rx="6" fill="#f7fbff"/>
+    <rect x="260" y="108" width="180" height="12" rx="6" fill="#f7fbff"/>
+    <path d="M80 52 C65 52 52 65 52 80 C52 95 65 108 80 108 C95 108 108 95 108 80 C108 65 95 52 80 52 Z" fill="#fff" opacity="0.15"/>
+  </g>
+</svg>

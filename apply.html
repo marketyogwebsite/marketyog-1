@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply — MarketYog</title>
+  <meta name="description" content="Apply for Sales & Customer Care roles through MarketYog" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="MarketYog">
+        <img src="assets/logo.svg" alt="MarketYog logo" />
+      </a>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/#how">How it Works</a></li>
+          <li><a href="/#jobs">Jobs</a></li>
+          <li><a href="/#companies">For Companies</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="/" class="btn ghost">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="badge">Premium Placement</div>
+          <h1>Apply Now</h1>
+          <p class="muted">Fill your details below and upload your resume. We will contact you for the first interview.</p>
+        </div>
+        <div class="hero-art">
+          <img src="assets/hero-illustration.svg" alt="Recruitment illustration" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-top:2rem;padding-bottom:4rem">
+      <div class="apply-page-grid">
+        <div class="apply-card">
+          <form id="applyFormPage" class="apply-form">
+            <div class="row">
+              <label>Full name
+                <input name="fullName" placeholder="Your full name" required />
+              </label>
+            </div>
+
+            <div class="row two-up">
+              <label>Mobile
+                <input name="phone" placeholder="Mobile number" required />
+              </label>
+              <label>Experience
+                <select name="experience" required>
+                  <option value="">Select</option>
+                  <option value="Fresher">Fresher</option>
+                  <option value="0-1">0-1 years</option>
+                  <option value="1-2">1-2 years</option>
+                  <option value="2-5">2-5 years</option>
+                  <option value="5+">5+ years</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="row">
+              <label>Email
+                <input name="email" type="email" placeholder="Email address" required />
+              </label>
+            </div>
+
+            <div class="row">
+              <label class="file">Resume (PDF)
+                <input id="resumeInput" name="resume" type="file" accept="application/pdf" />
+              </label>
+              <div class="muted small" style="margin-top:8px">Tip: Use a clear PDF resume. Max 2 MB. Drag & drop or click to browse.</div>
+            </div>
+
+            <div class="row">
+              <button type="submit" class="btn primary">Submit Application</button>
+              <button type="reset" class="btn ghost">Reset</button>
+            </div>
+          </form>
+          <div id="applySuccessPage" class="success" hidden>
+            <div class="apply-success-card">
+              <h3>Thanks! Your application is received.</h3>
+              <p class="muted">We will review and contact you for the first interview. Good luck!</p>
+              <div style="margin-top:0.75rem">
+                <a href="/" class="btn">Back to Home</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="apply-side">
+          <div class="side-box">
+            <h4>Why MarketYog?</h4>
+            <ul>
+              <li>✔ We pre-screen candidates and take the first interview.</li>
+              <li>✔ Faster shortlisting for Sales & Customer Care roles.</li>
+              <li>✔ Multiple partner companies — better placement chances.</li>
+            </ul>
+            <p class="muted small">We respect your privacy. Your data is used for recruitment only.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MarketYog — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script>
+    // Local handling for the standalone apply page: reuse storage helpers in app.js
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear()
+      const form = document.getElementById('applyFormPage')
+      const success = document.getElementById('applySuccessPage')
+      if (!form) return
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        const fd = new FormData(form)
+        const fullName = (fd.get('fullName') || '').trim()
+        const phone = (fd.get('phone') || '').trim()
+        const email = (fd.get('email') || '').trim()
+        const experience = (fd.get('experience') || '').trim()
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+        const phoneOk = /^[0-9 +()-]{7,20}$/.test(phone)
+        if (!fullName || !emailOk || !phoneOk || !experience) return alert('Please fill all required fields correctly.')
+
+        const resumeFile = form.querySelector('input[name="resume"]').files[0]
+        const app = { id: 'app_' + Date.now(), fullName, email, phone, experience, createdAt: new Date().toISOString() }
+        if (resumeFile) {
+          app.resumeName = resumeFile.name
+          app.resumeType = resumeFile.type
+          app.resumeSize = resumeFile.size
+          try { app.resumeDataUrl = await (new Promise((resolve, reject) => { const r=new FileReader(); r.onload=()=>resolve(r.result); r.onerror=reject; r.readAsDataURL(resumeFile)})) } catch(e){console.warn(e)}
+        }
+        // save to localStorage
+        const key = 'marketyog_applications'
+          // Enhanced apply page handling: drag/drop resume, validation, progress
+          document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear()
+            const form = document.getElementById('applyFormPage')
+            const success = document.getElementById('applySuccessPage')
+            const resumeInput = document.getElementById('resumeInput')
+
+            // Build a dropzone UI above the file input
+            const drop = document.createElement('div')
+            drop.className = 'upload-drop'
+            drop.innerHTML = `
+              <div class="drop-icon">📁</div>
+              <div>
+                <div class="upload-meta">Drag & drop your resume here, or <strong>browse</strong></div>
+                <div class="upload-sub muted small">PDF, max 2 MB</div>
+              </div>
+            `
+            resumeInput.parentNode.insertBefore(drop, resumeInput)
+            resumeInput.style.display = 'none'
+
+            const fileInfo = document.createElement('div')
+            fileInfo.className = 'file-info'
+            fileInfo.style.display = 'none'
+            fileInfo.innerHTML = `<div><div class="name"></div><div class="size muted"></div></div><div class="file-actions"><button class="btn small">Remove</button></div>`
+            drop.parentNode.insertBefore(fileInfo, drop.nextSibling)
+
+            const maxSize = 2 * 1024 * 1024 // 2MB
+
+            function setFile(file) {
+              if (!file) { fileInfo.style.display = 'none'; resumeInput.value = ''; form._resumeFile = null; return }
+              if (file.type !== 'application/pdf') return alert('Please upload a PDF resume.')
+              if (file.size > maxSize) return alert('Resume too large. Max 2 MB.')
+              fileInfo.querySelector('.name').textContent = file.name
+              fileInfo.querySelector('.size').textContent = Math.round(file.size / 1024) + ' KB'
+              fileInfo.style.display = 'flex'
+              // store reference on form for reading
+              form._resumeFile = file
+            }
+
+            drop.addEventListener('click', () => resumeInput.click())
+            drop.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('dragover') })
+            drop.addEventListener('dragleave', () => drop.classList.remove('dragover'))
+            drop.addEventListener('drop', (e) => {
+              e.preventDefault(); drop.classList.remove('dragover')
+              const f = e.dataTransfer.files && e.dataTransfer.files[0]
+              if (f) setFile(f)
+            })
+
+            resumeInput.addEventListener('change', (e) => { const f = e.target.files[0]; if (f) setFile(f) })
+
+            fileInfo.querySelector('button').addEventListener('click', () => { setFile(null) })
+
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault()
+              const fd = new FormData(form)
+              const fullName = (fd.get('fullName') || '').trim()
+              const phone = (fd.get('phone') || '').trim()
+              const email = (fd.get('email') || '').trim()
+              const experience = (fd.get('experience') || '').trim()
+              const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+              const phoneOk = /^[0-9 +()-]{7,20}$/.test(phone)
+              if (!fullName || !emailOk || !phoneOk || !experience) return alert('Please fill all required fields correctly.')
+
+              const resumeFile = form._resumeFile
+
+              const app = { id: 'app_' + Date.now(), fullName, email, phone, experience, createdAt: new Date().toISOString() }
+              if (resumeFile) {
+                app.resumeName = resumeFile.name
+                app.resumeType = resumeFile.type
+                app.resumeSize = resumeFile.size
+                // show a tiny progress bar while reading file
+                const p = document.createElement('div'); p.className='progress'; const i=document.createElement('i'); p.appendChild(i); fileInfo.parentNode.insertBefore(p, fileInfo.nextSibling)
+                try {
+                  await new Promise((resolve, reject) => {
+                    const r = new FileReader()
+                    r.onprogress = (ev) => { if (ev.lengthComputable) { const pct = Math.round((ev.loaded/ev.total)*100); i.style.width = pct + '%' } }
+                    r.onload = () => { app.resumeDataUrl = r.result; i.style.width = '100%'; setTimeout(resolve, 300) }
+                    r.onerror = () => reject(new Error('Failed to read file'))
+                    r.readAsDataURL(resumeFile)
+                  })
+                } catch (err) { console.warn(err) }
+                p.remove()
+              }
+
+              // save to localStorage
+              const key = 'marketyog_applications'
+              const list = JSON.parse(localStorage.getItem(key) || '[]')
+              list.push(app)
+              localStorage.setItem(key, JSON.stringify(list))
+
+              form.hidden = true
+              success.hidden = false
+            })
+          })
